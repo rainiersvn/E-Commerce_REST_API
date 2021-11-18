@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const userSchema = new mongoose.Schema(
+const UserSchema = new mongoose.Schema(
     {
         username: { type: String, required: true, unique: true }, 
         email: { type: String, required: true, unique: true },
@@ -9,5 +9,7 @@ const userSchema = new mongoose.Schema(
             type:boolean, 
             default: false, 
         },
-    }
+    }, {timestamps: true}
 );
+
+export default UserSchema;
