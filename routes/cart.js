@@ -1,5 +1,3 @@
-const router = require("express").Router();
-const Product = require("../models/Product");
 const Cart = require("../models/Cart");
 const {
     verifyToken,
@@ -38,7 +36,7 @@ router.put("/:id", verifyTokenAndAuthorization, async (req, res)=>{
     }    
 });
 
-// DELETE PRODUCT
+// DELETE CART
 router.delete("/:id", verifyTokenAndAuthorization, async (req, res)=>{
     try{
         await Cart.findByIdAndDelete(req.params.id);
