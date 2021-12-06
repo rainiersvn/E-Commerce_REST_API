@@ -8,7 +8,9 @@ router.post("/api/payment", (req, res) => {
         currency: "zar",
     }, (paypalErr, paypalRes) => {
         if(paypalErr){
-            
+            res.status(500).json(paypalErr);
+        }else{
+            res.status(200).json(paypalRes);
         }
     });
 });
